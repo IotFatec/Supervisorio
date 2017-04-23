@@ -1,6 +1,6 @@
 ﻿namespace Supervisorio
 {
-    partial class Form1
+    partial class FormAbout
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // FormAbout
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(694, 396);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "FormAbout";
+            this.Text = "FormAbout";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
     }
 }
-
