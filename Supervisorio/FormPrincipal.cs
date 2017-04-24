@@ -9,9 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Supervisorio
-{
+{  
+
     public partial class FormPrincipal : Form
     {
+
+        List<Transelevador> listaDados;
+
         public FormPrincipal()
         {
             InitializeComponent();
@@ -43,6 +47,9 @@ namespace Supervisorio
             form.Location = new Point(0, 0);            //Indica a posição do form         
 
             form.Size = new Size(this.Size.Width - 92, this.Size.Height - 44);
+
+            listaDados = form.produtos;
+
         }        
 
         private void tSBDados_Click(object sender, EventArgs e)
