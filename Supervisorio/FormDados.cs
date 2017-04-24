@@ -16,5 +16,10 @@ namespace Supervisorio
         {
             InitializeComponent();
         }
+
+        private void FormDados_Load(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = MetodosEstaticos.listaDados;
+        }
     }
 }

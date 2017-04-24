@@ -71,6 +71,7 @@
     <Compile Include="FormDados.Designer.cs">
       <DependentUpon>FormDados.cs</DependentUpon>
     </Compile>
+    <Compile Include="MetodosEstaticos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Transelevador.cs" />

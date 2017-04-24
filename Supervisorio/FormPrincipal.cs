@@ -24,7 +24,7 @@ namespace Supervisorio
         
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-            tSBHomePage_Click(sender, e);                   
+            tSBHomePage_Click(sender, e);    
         }
 
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -46,9 +46,8 @@ namespace Supervisorio
             form.Show();                                //Apresenta o form dentro do container
             form.Location = new Point(0, 0);            //Indica a posição do form         
 
-            form.Size = new Size(this.Size.Width - 92, this.Size.Height - 44);
-
-            listaDados = form.produtos;
+            form.Size = new Size(this.Size.Width - 92, this.Size.Height - 44);                
+                
 
         }        
 
