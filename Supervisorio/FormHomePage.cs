@@ -19,18 +19,34 @@ namespace Supervisorio
             InitializeComponent();
         }
 
+        private void FormHomePage_Load(object sender, EventArgs e)
+        {
+            if(MetodosEstaticos.status)
+            {
+                richTextBox1.Visible = true;
+                btnConectar.Text = "DESCONECTAR";            
+            }
+            else
+            {
+                richTextBox1.Visible = false;
+                btnConectar.Text = "CONECTAR";
+            }
+        }
+
         private async void btnConectar_Click(object sender, EventArgs e)
         {
             if (btnConectar.Text == "DESCONECTAR")
             {
-
+                richTextBox1.Visible = false;
+                btnConectar.Text = "CONECTAR";
+                MetodosEstaticos.status = false;
             }
             else
             {
                 try
                 {
                     btnConectar.Text = "CONECTANDO";
-                    await MetodosEstaticos.ConectarWebService(txtUrl.Text, "bearer", txtToken.Text, 1000);
+                    await MetodosEstaticos.ConectarWebService(txtUrl.Text, "bearer", txtToken.Text);
                     if (!MetodosEstaticos.status)
                     {
                         MessageBox.Show("Por favor verifique a URL e o Token de acesso!");
@@ -62,6 +78,7 @@ namespace Supervisorio
             else
                 btnConectar.Enabled = false;
         }
+
     }
 }
 

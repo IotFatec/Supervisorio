@@ -21,5 +21,11 @@ namespace Supervisorio
         {
             dataGridView1.DataSource = MetodosEstaticos.listaDados;
         }
+
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            await MetodosEstaticos.ConectarWebService();
+            dataGridView1.DataSource = MetodosEstaticos.listaDados;
+        }
     }
 }
