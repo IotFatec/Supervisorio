@@ -79,6 +79,34 @@ namespace Supervisorio
                 btnConectar.Enabled = false;
         }
 
+        #region Eventos dos textBox
+
+        private void txtUrl_Click(object sender, EventArgs e)
+        {
+            txtUrl.Clear();
+        }
+
+        private void txtUrl_Leave(object sender, EventArgs e)
+        {
+            if (txtUrl.Text == "")
+                txtUrl.Text = "Digite a URL";
+        }
+
+        private void txtToken_Click(object sender, EventArgs e)
+        {
+            txtToken.Clear();
+        }
+
+
+        private void txtToken_Leave(object sender, EventArgs e)
+        {
+            if (txtToken.Text == "")
+                txtToken.Text = "Insira aqui o token";
+        }
+
+
+        #endregion
+
     }
 }
 

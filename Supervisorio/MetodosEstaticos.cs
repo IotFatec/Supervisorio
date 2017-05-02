@@ -20,7 +20,7 @@ namespace Supervisorio
         public static async Task ConectarWebService(string url, string tipo, string token)
         {            
             tokenApp = token;
-            urlApp = "http://iiot-webapi2.azurewebsites.net/api/products";
+            urlApp = "http://iiot-webapi2.azurewebsites.net/api/products";  //mudar depois
             status = false;
 
             using (HttpClient client = new HttpClient())

@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHomePage));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.txtUrl = new System.Windows.Forms.TextBox();
             this.btnConectar = new System.Windows.Forms.Button();
             this.txtToken = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -57,6 +57,20 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Conecte ao serviço";
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.Lavender;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.ForeColor = System.Drawing.Color.SlateGray;
+            this.richTextBox1.Location = new System.Drawing.Point(9, 140);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(351, 133);
+            this.richTextBox1.TabIndex = 5;
+            this.richTextBox1.Text = "Você está conectado! Acesse a opção Dados para visualizar os dados da sua planta " +
+    "industrial!";
+            this.richTextBox1.Visible = false;
+            // 
             // txtUrl
             // 
             this.txtUrl.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -64,9 +78,11 @@
             this.txtUrl.Location = new System.Drawing.Point(9, 156);
             this.txtUrl.Name = "txtUrl";
             this.txtUrl.Size = new System.Drawing.Size(349, 29);
-            this.txtUrl.TabIndex = 4;
+            this.txtUrl.TabIndex = 1;
             this.txtUrl.TabStop = false;
             this.txtUrl.Text = "Digite a URL ";
+            this.txtUrl.Click += new System.EventHandler(this.txtUrl_Click);
+            this.txtUrl.Leave += new System.EventHandler(this.txtUrl_Leave);
             // 
             // btnConectar
             // 
@@ -91,9 +107,11 @@
             this.txtToken.Location = new System.Drawing.Point(11, 244);
             this.txtToken.Name = "txtToken";
             this.txtToken.Size = new System.Drawing.Size(349, 29);
-            this.txtToken.TabIndex = 1;
+            this.txtToken.TabIndex = 2;
             this.txtToken.TabStop = false;
             this.txtToken.Text = "Insira aqui o token";
+            this.txtToken.Click += new System.EventHandler(this.txtToken_Click);
+            this.txtToken.Leave += new System.EventHandler(this.txtToken_Leave);
             // 
             // label1
             // 
@@ -125,20 +143,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BackColor = System.Drawing.Color.Lavender;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.ForeColor = System.Drawing.Color.SlateGray;
-            this.richTextBox1.Location = new System.Drawing.Point(9, 140);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(351, 133);
-            this.richTextBox1.TabIndex = 5;
-            this.richTextBox1.Text = "Você está conectado! Acesse a opção Dados para visualizar os dados da sua planta " +
-    "industrial!";
-            this.richTextBox1.Visible = false;
             // 
             // FormHomePage
             // 

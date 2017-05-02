@@ -15,5 +15,14 @@ namespace Supervisorio
         public float preco { get; set; }
         public int estocado { get; set; }
         public int minimo { get; set; }
+
+        public override string ToString()
+        {
+            string resposta = ("Prateleira: " + Id.ToString() +"\nNome do produto: " + nome + 
+                "\nDescrição do produto: " + descricao + "\nCódigo de estoque: " + codigo + 
+                "\nPreço do fornecedor: R$ " + preco + "\nQuantidade em estoque: " + estocado +
+                "\nQuantidade mínima: " + minimo);
+            return resposta;
+        }
     }
 }
