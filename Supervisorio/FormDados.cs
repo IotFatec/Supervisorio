@@ -21,6 +21,8 @@ namespace Supervisorio
         {
             dataGridView1.DataSource = MetodosEstaticos.listaDados;
             AtualizarGraficoGeral();
+            AtualizarBotoes();
+            btnEst1_Click(sender, e);
         }
 
         private void AtualizarGraficoIndividual(int id)
@@ -33,7 +35,7 @@ namespace Supervisorio
             chGrafIndivid.Series.Add("Quantidade mínima");
             
 
-            chGrafIndivid.Titles.Add(MetodosEstaticos.listaDados[id - 1].nome);
+            chGrafIndivid.Titles.Add(MetodosEstaticos.listaDados[id - 1].nome.ToUpper());
             chGrafIndivid.Titles[0].Font = new Font("Arial", 20, FontStyle.Bold);
             chGrafIndivid.Titles[0].ForeColor = Color.SeaGreen;
             
@@ -47,10 +49,121 @@ namespace Supervisorio
             
         }
 
+        private void AtualizarBotoes()
+        {
+            try
+            {
+                //Botão Prateleira 1
+                btnEst1.Text = MetodosEstaticos.listaDados[0].estocado.ToString();
+                if(MetodosEstaticos.listaDados[0].estocado <= MetodosEstaticos.listaDados[0].minimo)
+                {
+                    btnEst1.BackColor = Color.IndianRed;
+                }
+                else
+                {
+                    btnEst1.BackColor = Color.LightSeaGreen;
+                }
+
+                //Botão Prateleira 2
+                btnEst2.Text = MetodosEstaticos.listaDados[1].estocado.ToString();
+                if (MetodosEstaticos.listaDados[1].estocado <= MetodosEstaticos.listaDados[1].minimo)
+                {
+                    btnEst2.BackColor = Color.IndianRed;
+                }
+                else
+                {
+                    btnEst2.BackColor = Color.LightSeaGreen;
+                }
+
+                //Botão Prateleira 3
+                btnEst3.Text = MetodosEstaticos.listaDados[2].estocado.ToString();
+                if (MetodosEstaticos.listaDados[2].estocado <= MetodosEstaticos.listaDados[2].minimo)
+                {
+                    btnEst3.BackColor = Color.IndianRed;
+                }
+                else
+                {
+                    btnEst3.BackColor = Color.LightSeaGreen;
+                }
+
+                //Botão Prateleira 4
+                btnEst4.Text = MetodosEstaticos.listaDados[3].estocado.ToString();
+                if (MetodosEstaticos.listaDados[3].estocado <= MetodosEstaticos.listaDados[3].minimo)
+                {
+                    btnEst4.BackColor = Color.IndianRed;
+                }
+                else
+                {
+                    btnEst4.BackColor = Color.LightSeaGreen;
+                }
+
+                //Botão Prateleira 5
+                btnEst5.Text = MetodosEstaticos.listaDados[4].estocado.ToString();
+                if (MetodosEstaticos.listaDados[4].estocado <= MetodosEstaticos.listaDados[4].minimo)
+                {
+                    btnEst5.BackColor = Color.IndianRed;
+                }
+                else
+                {
+                    btnEst5.BackColor = Color.LightSeaGreen;
+                }
+
+                //Botão Prateleira 6
+                btnEst6.Text = MetodosEstaticos.listaDados[5].estocado.ToString();
+                if (MetodosEstaticos.listaDados[5].estocado <= MetodosEstaticos.listaDados[5].minimo)
+                {
+                    btnEst6.BackColor = Color.IndianRed;
+                }
+                else
+                {
+                    btnEst6.BackColor = Color.LightSeaGreen;
+                }
+
+                //Botão Prateleira 7
+                btnEst7.Text = MetodosEstaticos.listaDados[6].estocado.ToString();
+                if (MetodosEstaticos.listaDados[6].estocado <= MetodosEstaticos.listaDados[6].minimo)
+                {
+                    btnEst7.BackColor = Color.IndianRed;
+                }
+                else
+                {
+                    btnEst7.BackColor = Color.LightSeaGreen;
+                }
+
+                //Botão Prateleira 8
+                btnEst8.Text = MetodosEstaticos.listaDados[7].estocado.ToString();
+                if (MetodosEstaticos.listaDados[7].estocado <= MetodosEstaticos.listaDados[7].minimo)
+                {
+                    btnEst8.BackColor = Color.IndianRed;
+                }
+                else
+                {
+                    btnEst8.BackColor = Color.LightSeaGreen;
+                }
+
+                //Botão Prateleira 9
+                btnEst9.Text = MetodosEstaticos.listaDados[8].estocado.ToString();
+                if (MetodosEstaticos.listaDados[8].estocado <= MetodosEstaticos.listaDados[8].minimo)
+                {
+                    btnEst9.BackColor = Color.IndianRed;
+                }
+                else
+                {
+                    btnEst9.BackColor = Color.LightSeaGreen;
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
         private void AtualizarGraficoGeral()
         {
             try
             {
+                chGrafGeral.Series[0].Points.Clear();
+                chGrafGeral.Titles.Clear();
                 //Título do gráfico
                 chGrafGeral.Titles.Add("Ocupação das prateleiras");
                 chGrafGeral.Titles[0].Font = new Font("Arial", 20, FontStyle.Bold);
@@ -117,6 +230,15 @@ namespace Supervisorio
         {
             try
             {
+                pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                try
+                {
+                    pictureBox1.Image = Image.FromFile("../../Imagens/Produtos/" + MetodosEstaticos.listaDados[id-1].nome.ToUpper() + ".jpg");
+                }
+                catch
+                {
+                    pictureBox1.Image = Image.FromFile("../../Imagens/Produtos/NOIMAGE.png");
+                }
                 AtualizarGraficoIndividual(id);
                 Transelevador aux;
                 switch (id)
@@ -172,8 +294,8 @@ namespace Supervisorio
             }
             catch
             {
-                MessageBox.Show("Não foi possível atualizar os dados!\nVerificque sua conexão!", "", MessageBoxButtons.OK, MessageBoxIcon.None);
-            }
+               // MessageBox.Show("Não foi possível atualizar os dados!\nVerifique sua conexão!", "", MessageBoxButtons.OK, MessageBoxIcon.None);
+            }            
         }
 
         private async void button1_Click(object sender, EventArgs e)
@@ -182,6 +304,9 @@ namespace Supervisorio
             {
                 await MetodosEstaticos.ConectarWebService();
                 dataGridView1.DataSource = MetodosEstaticos.listaDados;
+                AtualizarGraficoGeral();
+                AtualizarBotoes();
+                btnEst1_Click(sender, e);
             }
             catch
             {

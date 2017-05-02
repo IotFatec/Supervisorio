@@ -62,6 +62,7 @@ namespace Supervisorio
                 catch (Exception erro)
                 {
                     MessageBox.Show(erro.Message);
+                    btnConectar.Text = "CONECTAR";
                 }
 
             }
